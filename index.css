@@ -55,3 +55,21 @@ h1{
     height: 4px;
     top: 83%;
 }
+
+.strike-column-1{
+    width: 4px;
+    height: 100%;
+    left: 15%;
+}
+
+.strike-column-2{
+    width: 4px;
+    height: 100%;
+    left: 48%;
+}
+
+.strike-column-3{
+    width: 4px;
+    height: 100%;
+    left: 83%;
+}
