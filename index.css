@@ -73,3 +73,19 @@ h1{
     height: 100%;
     left: 83%;
 }
+
+.strike-diagonal-1{
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 6%;
+    transform: skewY(45deg);
+}
+
+.strike-diagonal-2{
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 3%;
+    transform: skewY(-45deg);
+}
