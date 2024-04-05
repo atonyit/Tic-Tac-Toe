@@ -1,2 +1,1 @@
-First project made with a tutorial
-Features a working Tic-Tac-Toe board and a way to win
+My first project that I made with the help of a tutorial at https://www.youtube.com/watch?v=fPew9OI2PnA&t=931s
