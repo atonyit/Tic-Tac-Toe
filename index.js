@@ -72,11 +72,14 @@ function checkWinner(){
         const tileValue2 = boardState[combo[1] - 1];
         const tileValue3 = boardState[combo[2] - 1];
 
-        if(tileValue1 != null && 
+        if(
+            tileValue1 != null && 
             tileValue1 === tileValue2 &&
-             tileValue1 === tileValue3){
+            tileValue1 === tileValue3
+        ) {
             strike.classList.add(strikeClass);
             gameOverScreen(tileValue1);
+            return;
         }
     }
     //Check for a draw
