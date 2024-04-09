@@ -63,6 +63,35 @@ function tileClick(event){
     checkWinner();
 }
 
+function checkWinner(){
+    //Checking for winner
+    for(const winningCombination of winningCombinations){
+        const combo = winningCombination.combo;
+        const strikeClass = winningCombination.strikeClass;
+        const tileValue1 = boardState[combo[0] - 1];
+        const tileValue2 = boardState[combo[1] - 1];
+        const tileValue3 = boardState[combo[2] - 1];
+
+        if(tileValue1 != null && 
+            tileValue1 === tileValue2 &&
+             tileValue1 === tileValue3){
+            strike.classList.add(strikeClass);
+            gameOverScreen(tileValue1);
+        }
+    }
+    //Check for a draw
+}
+
+function gameOverScreen(winnerText){
+    let text = 'Draw!';
+    if(winnerText != null){
+        text = `Winner is ${winnerText}!`;
+    }
+    gameOverArea.className = 'visible';
+    gameOverText.innerText = text;
+    gameOverSound.play();
+}
+
 const winningCombinations = [
     //rows
     {combo:[1, 2, 3], strikeClass: "strike-row-1"},
