@@ -78,8 +78,8 @@ body{
 .strike-diagonal-1{
     width: 90%;
     height: 4px;
-    top: 59%;
-    left: 6%;
+    top: 50%;
+    left: 1%;
     transform: skewY(45deg);
 }
 
@@ -87,7 +87,7 @@ body{
     width: 90%;
     height: 4px;
     top: 59%;
-    left: 3%;
+    right: 1%;
     transform: skewY(-45deg);
 }
 
