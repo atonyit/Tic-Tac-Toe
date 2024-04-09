@@ -18,6 +18,24 @@ const clickSound = new Audio(".vscode/sounds/click.wav");
 
 tiles.forEach((tile) => tile.addEventListener("click", tileClick));
 
+function setHoverText(){
+    //remove all hover text
+    tiles.forEach(tile=>{
+        tile.classList.remove("x-hover");
+        tile.classList.remove("o-hover");
+    });
+
+    const hoverClass = `${turn.toLowerCase()}-hover`;
+
+    tiles.forEach(tile => {
+        if(tile.innerText == ""){
+            tile.classList.add(hoverClass);
+        }
+    });
+}
+
+setHoverText();
+
 function tileClick(event){
     if(gameOverArea.classList.contains('visible')){
         return;
@@ -31,7 +49,14 @@ function tileClick(event){
 
     if(turn === PLAYER_X){
         tile.innerText = PLAYER_X;
-        boardState[tileNumber - 1]
+        boardState[tileNumber - 1] = PLAYER_X;
+        turn = PLAYER_O;
     }
+    else{
+        tile.innerText = PLAYER_O;
+        boardState[tileNumber - 1] = PLAYER_O;
+        turn = PLAYER_X;
+    }
+    clickSound.play();
 }
 
