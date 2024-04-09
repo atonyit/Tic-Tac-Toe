@@ -58,5 +58,6 @@ function tileClick(event){
         turn = PLAYER_X;
     }
     clickSound.play();
+    setHoverText();
 }
 
