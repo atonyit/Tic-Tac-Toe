@@ -12,6 +12,7 @@ const strike = document.getElementById('strike');
 const gameOverArea = document.getElementById('game-over-area');
 const gameOverText = document.getElementById('game-over-text');
 const playAgain = document.getElementById('play-again');
+playAgain.addEventListener("click", startNewGame);
 
 const gameOverSound = new Audio(".vscode/sounds/game_over.wav");
 const clickSound = new Audio(".vscode/sounds/click.wav");
@@ -99,6 +100,16 @@ function gameOverScreen(winnerText){
     gameOverSound.play();
 }
 
+function startNewGame(){
+    strike.className = 'strike';
+    gameOverArea.className = "hidden";
+    boardState.fill(null);
+    tiles.forEach((tile) => (tile.innerText = ""));
+    turn = PLAYER_X;
+    setHoverText();
+
+}
+
 const winningCombinations = [
     //rows
     {combo:[1, 2, 3], strikeClass: "strike-row-1"},
@@ -111,5 +122,5 @@ const winningCombinations = [
     //diagonals
     {combo:[1, 5, 9], strikeClass: "strike-diagonal-1"},
     {combo:[3, 5, 7], strikeClass: "strike-diagonal-2"},
-]
+];
 
