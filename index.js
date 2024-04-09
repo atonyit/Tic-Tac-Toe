@@ -80,6 +80,10 @@ function checkWinner(){
         }
     }
     //Check for a draw
+    const allTileFilled = boardState.every((tile)=> tile !== null);
+    if(allTileFilled){
+        gameOverScreen(null);
+    }
 }
 
 function gameOverScreen(winnerText){
